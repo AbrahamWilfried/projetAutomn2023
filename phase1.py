@@ -32,7 +32,7 @@ if __name__ == '__main__':
     for symbole in args.symbole:
         date_début = args.début or args.fin
         date_fin = args.fin or str(datetime.date.today())
-        historique = produire_historique(symboles, date_début, date_fin, args.valeur)
-        print(f"titre={symboles}: valeur={args.valeur}, début={date_début}, fin={date_fin}")
+        historique = produire_historique(symbole, date_début, date_fin, args.valeur)
+        print(f"titre={symbole}: valeur={args.valeur}, début={date_début}, fin={date_fin}")
         print(historique)
         
