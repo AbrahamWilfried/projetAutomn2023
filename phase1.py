@@ -1,11 +1,11 @@
-#module standard de python requise pour le projet
+"""module standard de python requise pour le projet"""
 import argparse
 import json
 import datetime
 import requests
 
 def analyser_commande():
-    # fonction qui encapsule tous les appels au module argparse
+    """fonction qui encapsule tous les appels au module argparse"""
     parser = argparse.ArgumentParser(description="Extraction de "
     "valeurs historiques pour un ou plusieurs symboles boursiers.")
     parser.add_argument('symbole', nargs='+', help='Nom de symbole boursiers')
@@ -16,8 +16,8 @@ def analyser_commande():
     return parser.parse_args()
 
 def produire_historique(symboles, début, fin, valeur_desiree):
-    #fonction qui interagir avec le serveur du cours 
-    # afin de récupérer l'historique des symboles désirés
+    """fonction qui interagir avec le serveur du cours 
+    afin de récupérer l'historique des symboles désirés"""
     url = f'https://pax.ulaval.ca/action/{symboles}/historique/'
     params = {
         'début': début,
