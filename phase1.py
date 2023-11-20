@@ -29,3 +29,11 @@ def produire_historique(symbole, date_debut, date_fin, valeur_desiree):
         print(f"Erreur lors de la récupération des données pour {symbole}: {response.text}")
         return []
 
+if __name__ == '__main__':
+    args = analyser_commande()
+
+    for symbole in args.symboles:
+        date_debut = args.début or args.fin  # Utilise la date de fin par défaut si la date de début n'est pas spécifiée
+        date_fin = args.fin or str(datetime.date.today())  # Utilise la date d'aujourd'hui par défaut si la date de fin n'est pas spécifiée
+
+      
